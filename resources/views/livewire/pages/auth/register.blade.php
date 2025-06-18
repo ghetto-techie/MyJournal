@@ -83,6 +83,33 @@ new #[Layout('layouts.guest')] class extends Component
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
             </x-primary-button>
+
+        <!-- Social Login Section -->
+        <div class="mt-8">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-white text-gray-500">
+                        {{ __('Or sign up with') }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <a href="{{ route('socialite.redirect', 'google') }}" 
+                   class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200">
+                    <x-icons.google class="h-5 w-5" />
+                    <span class="ml-2">{{ __('Google') }}</span>
+                </a>
+                
+                <a href="{{ route('socialite.redirect', 'github') }}" 
+                   class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200">
+                    <x-icons.github class="h-5 w-5" />
+                    <span class="ml-2">{{ __('GitHub') }}</span>
+                </a>
+            </div>
         </div>
     </form>
 </div>
